@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rs.decodex.invoice.controller.SettingsViewController">
+    <bottom>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <Separator prefWidth="200.0" />
+                <HBox alignment="CENTER_RIGHT" prefWidth="200.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#saveSettings" text="%ok" />
+                    </children>
+                    <padding>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+    <left>
+        <TreeView fx:id="navigationView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </left>
+    <center>
+        <BorderPane fx:id="contentPane" prefHeight="300.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <top>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <Label fx:id="navigationLabel" />
+                    </items>
+                </ToolBar>
+            </top>
+        </BorderPane>
+    </center>
+</BorderPane>
