@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane fx:id="gridView" hgap="16.0" prefHeight="157.0" prefWidth="314.0" vgap="16.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rs.decodex.invoice.controller.LoginViewController">
+<GridPane fx:id="gridView" hgap="16.0" prefHeight="157.0" prefWidth="314.0" vgap="16.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.LoginViewController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
         <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
@@ -16,7 +16,7 @@
     </rowConstraints>
     <children>
         <Label text="%username" />
-        <TextField GridPane.columnIndex="1" />
+        <TextField fx:id="username" GridPane.columnIndex="1" />
       <HBox alignment="BOTTOM_RIGHT" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
          <children>
               <Button mnemonicParsing="false" onAction="#login" text="%ok" />
@@ -27,7 +27,7 @@
             </Button>
          </children>
       </HBox>
-        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Label text="%password" GridPane.rowIndex="1" />
     </children>
     <opaqueInsets>
