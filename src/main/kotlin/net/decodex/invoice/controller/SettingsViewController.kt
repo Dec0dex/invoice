@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent
 import javafx.scene.layout.BorderPane
 import javafx.scene.text.Text
 import javafx.stage.Stage
-import net.decodex.invoice.model.NavigationModel
+import net.decodex.invoice.domain.model.NavigationModel
 import net.decodex.invoice.utils.FXLoader
 import net.decodex.invoice.utils.LanguageUtils
 import java.net.URL

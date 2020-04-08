@@ -1,4 +1,4 @@
-package net.decodex.invoice.model.dto
+package net.decodex.invoice.domain.dto
 
 data class AuthRequestDTO(
     val username: String,

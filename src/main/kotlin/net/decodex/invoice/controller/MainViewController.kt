@@ -8,6 +8,8 @@ import javafx.scene.layout.HBox
 import javafx.scene.layout.Priority
 import javafx.scene.layout.Region
 import net.decodex.invoice.utils.FlowUtils
+import net.decodex.invoice.utils.LanguageUtils
+import net.decodex.invoice.utils.launchOnFxThread
 import net.decodex.invoice.view.LoginView
 import net.decodex.invoice.view.SettingsView
 import java.net.URL
@@ -41,5 +43,26 @@ class MainViewController: Initializable {
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         HBox.setHgrow(spring, Priority.ALWAYS)
+    }
+
+    fun setProgress(progress: Double) {
+        launchOnFxThread {
+            progressBar.isDisable = false
+            progressBar.progress = progress
+        }
+    }
+
+    fun resetStatus() {
+        launchOnFxThread {
+            progressBar.isDisable = true
+            progressBar.progress = 0.0
+            statusLabel.text = LanguageUtils.getString("idle")
+        }
+    }
+
+    fun setStatusText(status: String) {
+        launchOnFxThread {
+            statusLabel.text = status
+        }
     }
 }

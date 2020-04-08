@@ -1,6 +1,4 @@
-package net.decodex.invoice.model
-
-import javax.swing.text.View
+package net.decodex.invoice.domain.model
 
 data class NavigationModel(
     val title: String,
