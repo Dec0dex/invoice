@@ -2,6 +2,7 @@ package net.decodex.invoice.controller.settings
 
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
+import javafx.scene.control.Alert
 import javafx.scene.control.ProgressIndicator.INDETERMINATE_PROGRESS
 import javafx.scene.control.TextField
 import kotlinx.coroutines.GlobalScope
@@ -16,6 +17,9 @@ import org.slf4j.LoggerFactory
 import java.net.URL
 import java.util.*
 
+/**
+ * TODO: Validation of the fields
+ */
 class SettingsCompanyController : Initializable {
 
     @FXML
@@ -89,7 +93,13 @@ class SettingsCompanyController : Initializable {
     }
 
     private fun showFailedToSaveAlert() {
-
+        launchOnFxThread {
+            val alert = Alert(Alert.AlertType.ERROR)
+            alert.title = LanguageUtils.getString("network_error")
+            alert.headerText = null
+            alert.contentText = LanguageUtils.getString("failed_to_save_data")
+            alert.showAndWait()
+        }
     }
 
     private fun fillTextFieldsWithData(company: Company) {
