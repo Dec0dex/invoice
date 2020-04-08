@@ -1,4 +1,5 @@
 plugins {
+    id("org.openjfx.javafxplugin") version "0.0.8"
     id("org.jetbrains.kotlin.jvm") version "1.3.70"
     application
 }
@@ -7,6 +8,11 @@ repositories {
     jcenter()
     mavenCentral()
     google()
+}
+
+javafx {
+    version = "14"
+    modules("javafx.controls", "javafx.fxml")
 }
 
 dependencies {

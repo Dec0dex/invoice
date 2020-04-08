@@ -3,7 +3,7 @@ package net.decodex.invoice.domain.model
 import java.util.*
 
 data class User(
-    val username: String,
+    var username: String,
     var password: String,
     var fullName: String,
     var email: String,

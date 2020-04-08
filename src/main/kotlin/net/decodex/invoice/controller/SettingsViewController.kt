@@ -33,6 +33,7 @@ class SettingsViewController : Initializable {
         navigationView.addEventHandler(MouseEvent.MOUSE_CLICKED) { event -> handleMouseClicked(event) }
         navigationView.isShowRoot = false
         navigationView.root = createRootTreeItem()
+        navigationView.root.children.add(createCompanyTreeItem())
         navigationView.root.children.add(createLanguageTreeItem())
     }
 
@@ -62,6 +63,17 @@ class SettingsViewController : Initializable {
             )
         )
     }
+
+    private fun createCompanyTreeItem(): TreeItem<NavigationModel> {
+        return TreeItem(
+            NavigationModel(
+                LanguageUtils.getString(
+                    "company"
+                ), "settings_company.fxml"
+            )
+        )
+    }
+
 
     private fun handleMouseClicked(event: MouseEvent) {
         val node: Node = event.pickResult.intersectedNode

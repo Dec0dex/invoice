@@ -17,18 +17,18 @@
     <children>
         <Label text="%username" />
         <TextField fx:id="username" GridPane.columnIndex="1" />
-      <HBox alignment="BOTTOM_RIGHT" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-         <children>
-              <Button mnemonicParsing="false" onAction="#login" text="%ok" />
-            <Button mnemonicParsing="false" onAction="#cancel" text="%cancel">
-               <HBox.margin>
-                  <Insets left="8.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
         <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Label text="%password" GridPane.rowIndex="1" />
+        <HBox alignment="BOTTOM_RIGHT" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+            <children>
+                <Button mnemonicParsing="false" onAction="#login" text="%ok" />
+                <Button mnemonicParsing="false" onAction="#cancel" text="%cancel">
+                    <HBox.margin>
+                        <Insets left="8.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
     </children>
     <opaqueInsets>
         <Insets />

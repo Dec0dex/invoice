@@ -24,7 +24,7 @@
         <TreeView fx:id="navigationView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     </left>
     <center>
-        <BorderPane fx:id="contentPane" prefHeight="300.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+        <BorderPane fx:id="contentPane" prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
             <top>
                 <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <items>

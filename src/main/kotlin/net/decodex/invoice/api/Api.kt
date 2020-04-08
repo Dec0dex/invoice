@@ -16,6 +16,7 @@ object Api {
 
     var authApi = getRetrofitInstance(serverUrl, getOkHttpClient()).create(AuthenticationApi::class.java)
     var userApi = getRetrofitInstance(serverUrl).create(UserApi::class.java)
+    var companyApi = getRetrofitInstance(serverUrl).create(CompanyApi::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
