@@ -2,12 +2,15 @@ package net.decodex.invoice.controller.settings
 
 import de.jensd.fx.glyphs.GlyphsDude
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon
+import javafx.beans.binding.Bindings
+import javafx.beans.value.ChangeListener
 import javafx.collections.FXCollections
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.ListView
 import javafx.scene.control.ProgressIndicator.INDETERMINATE_PROGRESS
+import javafx.scene.control.SelectionMode
 import javafx.scene.control.TextInputDialog
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -80,6 +83,13 @@ class SettingsUnitOfMeasureController : Initializable {
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         initializeData()
         setButtonIcons()
+        bindListViewFocus()
+    }
+
+    private fun bindListViewFocus() {
+        uomList.selectionModel.selectionMode = SelectionMode.SINGLE
+        editButton.disableProperty().bind(Bindings.isEmpty(uomList.selectionModel.selectedItems))
+        deleteButton.disableProperty().bind(Bindings.isEmpty(uomList.selectionModel.selectedItems))
     }
 
     private fun setButtonIcons() {
@@ -94,7 +104,7 @@ class SettingsUnitOfMeasureController : Initializable {
                 MainView.instance.controler.setProgress(INDETERMINATE_PROGRESS)
                 MainView.instance.controler.setStatusText(LanguageUtils.getString("fetching_units_of_measure"))
                 val result = FXCollections.observableArrayList(Api.unitOfMeasureApi.findAll(Cache.user.companyId))
-                launchOnFxThread { uomList.items = result}
+                launchOnFxThread { uomList.items = result }
             } catch (ex: Exception) {
                 AlertUtils.showFailedToLoadData()
                 LOG.error("Failed to load unit of measure data", ex)

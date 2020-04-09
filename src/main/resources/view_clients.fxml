@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.5" orientation="VERTICAL" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.ClientsViewController">
+   <items>
+      <BorderPane prefHeight="200.0" prefWidth="600.0">
+         <top>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <items>
+                  <Label text="%search" />
+                  <TextField fx:id="searchText" prefWidth="300.0" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" />
+                  <Separator orientation="VERTICAL" />
+                  <Button fx:id="addButton" mnemonicParsing="false" />
+                  <Button fx:id="editButton" mnemonicParsing="false" />
+                  <Button fx:id="deleteButton" mnemonicParsing="false" />
+               </items></ToolBar>
+         </top>
+         <center>
+            <TableView fx:id="clientsTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+      <TableView prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </items>
+</SplitPane>

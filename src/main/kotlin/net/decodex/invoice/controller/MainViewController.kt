@@ -4,9 +4,11 @@ import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Label
 import javafx.scene.control.ProgressBar
+import javafx.scene.layout.BorderPane
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Priority
 import javafx.scene.layout.Region
+import net.decodex.invoice.utils.FXLoader
 import net.decodex.invoice.utils.FlowUtils
 import net.decodex.invoice.utils.LanguageUtils
 import net.decodex.invoice.utils.launchOnFxThread
@@ -27,6 +29,9 @@ class MainViewController: Initializable {
     private lateinit var progressBar: ProgressBar
 
     @FXML
+    private lateinit var contentView: BorderPane
+
+    @FXML
     fun lockProgram() {
         LoginView.newInstance().showAndWait()
     }
@@ -39,6 +44,11 @@ class MainViewController: Initializable {
     @FXML
     fun openSettings() {
         SettingsView.newInstance().showAndWait()
+    }
+
+    @FXML
+    fun openClientsView() {
+        contentView.center = FXLoader.load("view_clients.fxml")
     }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {

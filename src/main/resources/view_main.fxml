@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.MainViewController">
+<BorderPane fx:id="contentView" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.MainViewController">
     <center>
         <AnchorPane prefHeight="600.0" prefWidth="800.0">
 
@@ -21,16 +21,11 @@
                         <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="%exit" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
+            <Menu mnemonicParsing="false" text="%work">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#openClientsView" text="%clients" />
+              </items>
+            </Menu>
             </menus>
         </MenuBar>
     </top>
