@@ -43,7 +43,7 @@ class LoginViewController {
             try {
                 MainView.instance.controler.setProgress(INDETERMINATE_PROGRESS)
                 MainView.instance.controler.setStatusText(LanguageUtils.getString("authorizing"))
-                val response = Api.authApi.authorize(request).await()
+                val response = Api.authApi.authorize(request)
                 Api.TOKEN = response.token
                 LOG.debug("API Token: ${Api.TOKEN}")
                 getUserDetails()
@@ -59,7 +59,7 @@ class LoginViewController {
 
     private suspend fun getUserDetails() {
         MainView.instance.controler.setStatusText(LanguageUtils.getString("getting_user_details"))
-        Cache.user = Api.userApi.getAuthenticatedUserInfo().await()
+        Cache.user = Api.userApi.getAuthenticatedUserInfo()
     }
 
     private fun showLoginFailedDialog() {

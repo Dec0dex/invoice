@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<HBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.settings.SettingsUnitOfMeasureController">
+   <children>
+      <ListView fx:id="uomList" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+      <VBox prefHeight="200.0" spacing="8.0" HBox.hgrow="SOMETIMES">
+         <children>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#add" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete" />
+         </children>
+         <padding>
+            <Insets left="16.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</HBox>

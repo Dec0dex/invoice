@@ -9,6 +9,6 @@ import net.decodex.invoice.domain.dto.AuthResponseDTO
 interface AuthenticationApi {
 
     @POST("auth")
-    fun authorize(@Body dto: AuthRequestDTO): Deferred<AuthResponseDTO>
+    suspend fun authorize(@Body dto: AuthRequestDTO): AuthResponseDTO
 
 }

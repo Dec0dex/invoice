@@ -5,6 +5,11 @@
 build
 /build/
 
+/logs
+logs
+logs/**
+/logs/**
+
 # Ignore Gradle GUI config
 gradle-app.setting
 

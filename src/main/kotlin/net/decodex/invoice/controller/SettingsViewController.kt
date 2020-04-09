@@ -34,6 +34,7 @@ class SettingsViewController : Initializable {
         navigationView.isShowRoot = false
         navigationView.root = createRootTreeItem()
         navigationView.root.children.add(createCompanyTreeItem())
+        navigationView.root.children.add(createUnitOfMeasureTreeItem())
         navigationView.root.children.add(createLanguageTreeItem())
     }
 
@@ -74,6 +75,15 @@ class SettingsViewController : Initializable {
         )
     }
 
+    private fun createUnitOfMeasureTreeItem(): TreeItem<NavigationModel> {
+        return TreeItem(
+            NavigationModel(
+                LanguageUtils.getString(
+                    "units_of_measure"
+                ), "settings_uom.fxml"
+            )
+        )
+    }
 
     private fun handleMouseClicked(event: MouseEvent) {
         val node: Node = event.pickResult.intersectedNode

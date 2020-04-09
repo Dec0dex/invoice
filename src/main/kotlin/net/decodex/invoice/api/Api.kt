@@ -1,7 +1,6 @@
 package net.decodex.invoice.api
 
 import com.google.gson.GsonBuilder
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import net.decodex.invoice.utils.PropUtils
 import okhttp3.OkHttpClient
 import retrofit2.Converter
@@ -17,6 +16,7 @@ object Api {
     var authApi = getRetrofitInstance(serverUrl, getOkHttpClient()).create(AuthenticationApi::class.java)
     var userApi = getRetrofitInstance(serverUrl).create(UserApi::class.java)
     var companyApi = getRetrofitInstance(serverUrl).create(CompanyApi::class.java)
+    var unitOfMeasureApi = getRetrofitInstance(serverUrl).create(UnitOfMeasureApi::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
@@ -49,7 +49,6 @@ object Api {
             .baseUrl(baseURL)
             .client(client)
             .addConverterFactory(getGsonConverter())
-            .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
             .build()
     }
 }

@@ -9,6 +9,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import net.decodex.invoice.api.Api
 import net.decodex.invoice.domain.model.Company
+import net.decodex.invoice.utils.AlertUtils
 import net.decodex.invoice.utils.Cache
 import net.decodex.invoice.utils.LanguageUtils
 import net.decodex.invoice.utils.launchOnFxThread
@@ -66,11 +67,11 @@ class SettingsCompanyController : Initializable {
                         phoneNumber.text,
                         email.text
                     )
-                ).await()
+                )
                 LOG.info(result.toString())
             } catch (ex: Exception) {
                 LOG.error("Failed to save company info", ex)
-                showFailedToSaveAlert()
+                AlertUtils.showFailedToSave()
             } finally {
                 MainView.instance.controler.resetStatus()
             }
@@ -82,23 +83,14 @@ class SettingsCompanyController : Initializable {
             try {
                 MainView.instance.controler.setProgress(INDETERMINATE_PROGRESS)
                 MainView.instance.controler.setStatusText(LanguageUtils.getString("fetching_company_info"))
-                val companyInfo = Api.companyApi.getCompanyInfo(Cache.user.companyId).await()
+                val companyInfo = Api.companyApi.getCompanyInfo(Cache.user.companyId)
                 fillTextFieldsWithData(companyInfo)
             } catch (e: Exception) {
                 LOG.error("Failed to fetch company info", e)
+                AlertUtils.showFailedToLoadData()
             } finally {
                 MainView.instance.controler.resetStatus()
             }
-        }
-    }
-
-    private fun showFailedToSaveAlert() {
-        launchOnFxThread {
-            val alert = Alert(Alert.AlertType.ERROR)
-            alert.title = LanguageUtils.getString("network_error")
-            alert.headerText = null
-            alert.contentText = LanguageUtils.getString("failed_to_save_data")
-            alert.showAndWait()
         }
     }
 
