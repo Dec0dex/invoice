@@ -4,8 +4,6 @@ import net.decodex.invoice.domain.model.Client
 import retrofit2.http.*
 
 interface ClientApi {
-    @GET("client/{id}")
-    suspend fun findClientById(@Path("id") clientId: Long): Client
 
     @PUT("client")
     suspend fun update(@Body client: Client): Client

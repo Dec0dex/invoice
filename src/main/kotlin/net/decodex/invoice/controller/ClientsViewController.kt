@@ -100,7 +100,9 @@ class ClientsViewController : Initializable {
 
     @FXML
     private fun delete() {
-        deleteItem(clientsTableView.selectionModel.selectedItem)
+        if (AlertUtils.deleteConfirmation()) {
+            deleteItem(clientsTableView.selectionModel.selectedItem)
+        }
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
@@ -127,7 +129,7 @@ class ClientsViewController : Initializable {
         clientsTableView.selectionModel.selectionMode = SelectionMode.SINGLE
         editButton.disableProperty().bind(Bindings.isEmpty(clientsTableView.selectionModel.selectedItems))
         deleteButton.disableProperty().bind(Bindings.isEmpty(clientsTableView.selectionModel.selectedItems))
-
+        searchText.textProperty().addListener { _-> search() }
     }
 
     private fun setButtonIcons() {
