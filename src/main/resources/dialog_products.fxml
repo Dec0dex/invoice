@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane hgap="16.0" vgap="8.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="net.decodex.invoice.controller.ProductsDialogController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <children>
+        <Label text="%name"/>
+        <TextField fx:id="name" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+        <Label text="%barcode" GridPane.rowIndex="1"/>
+        <Label text="%unit_of_measure" GridPane.rowIndex="2"/>
+        <Label text="%pdv" GridPane.rowIndex="3"/>
+        <Label text="%price" GridPane.rowIndex="4"/>
+        <TextField fx:id="barcode" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"/>
+        <ChoiceBox fx:id="unitOfMeasure" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <TextField fx:id="pdv" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3"/>
+        <TextField fx:id="price" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4"/>
+    </children>
+    <padding>
+        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+    </padding>
+</GridPane>

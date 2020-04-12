@@ -2,8 +2,8 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<BorderPane fx:id="contentView" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="net.decodex.invoice.controller.MainViewController">
+
+<BorderPane fx:id="contentView" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.MainViewController">
     <center>
         <AnchorPane prefHeight="600.0" prefWidth="800.0">
 
@@ -14,16 +14,17 @@
             <menus>
                 <Menu mnemonicParsing="false" text="%file">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="%users"/>
-                        <MenuItem mnemonicParsing="false" onAction="#openSettings" text="%settings"/>
-                        <SeparatorMenuItem mnemonicParsing="false"/>
-                        <MenuItem mnemonicParsing="false" onAction="#lockProgram" text="%lock"/>
-                        <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="%exit"/>
+                        <MenuItem mnemonicParsing="false" text="%users" />
+                        <MenuItem mnemonicParsing="false" onAction="#openSettings" text="%settings" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#lockProgram" text="%lock" />
+                        <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="%exit" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="%work">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#openClientsView" text="%clients"/>
+                        <MenuItem mnemonicParsing="false" onAction="#openClientsView" text="%clients" />
+                  <MenuItem mnemonicParsing="false" onAction="#openProductsView" text="%products" />
                     </items>
                 </Menu>
             </menus>
@@ -32,9 +33,9 @@
     <bottom>
         <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <items>
-                <Label fx:id="statusLabel" text="%idle"/>
-                <Region fx:id="spring"/>
-                <ProgressBar fx:id="progressBar" disable="true" prefWidth="200.0" progress="0.0"/>
+                <Label fx:id="statusLabel" text="%idle" />
+                <Region fx:id="spring" />
+                <ProgressBar fx:id="progressBar" disable="true" prefWidth="200.0" progress="0.0" />
             </items>
         </ToolBar>
     </bottom>

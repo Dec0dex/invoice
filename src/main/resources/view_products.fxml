@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane prefHeight="200.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.ProductsViewController">
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <Label text="%search"/>
+                <TextField fx:id="searchText" prefWidth="300.0"/>
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search"/>
+                <Separator orientation="VERTICAL"/>
+                <Button fx:id="addButton" mnemonicParsing="false" onAction="#add"/>
+                <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit"/>
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete"/>
+            </items>
+        </ToolBar>
+    </top>
+    <center>
+        <TableView fx:id="productsTableView" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true"
+                   BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="50.0" text="Id"/>
+                <TableColumn fx:id="nameColumn" prefWidth="400.0" text="%product_description"/>
+                <TableColumn fx:id="barcodeColumn" prefWidth="150.0" text="%barcode_s"/>
+                <TableColumn fx:id="unitOfMeasureColumn" prefWidth="130.0" text="%unit_of_measure_s"/>
+                <TableColumn fx:id="pdvColumn" text="%pdv_s"/>
+                <TableColumn fx:id="priceColumn" prefWidth="150.0" text="%price_s"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
