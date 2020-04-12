@@ -12,8 +12,10 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import net.decodex.invoice.api.Api
 import net.decodex.invoice.domain.model.Client
-import net.decodex.invoice.domain.model.UnitOfMeasure
-import net.decodex.invoice.utils.*
+import net.decodex.invoice.utils.AlertUtils
+import net.decodex.invoice.utils.Cache
+import net.decodex.invoice.utils.LanguageUtils
+import net.decodex.invoice.utils.launchOnFxThread
 import net.decodex.invoice.view.ClientDialog
 import net.decodex.invoice.view.MainView
 import org.slf4j.LoggerFactory

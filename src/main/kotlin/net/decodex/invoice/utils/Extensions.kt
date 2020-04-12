@@ -4,8 +4,6 @@ import javafx.scene.control.ChoiceBox
 import javafx.scene.control.TableView
 import kotlinx.coroutines.*
 import kotlinx.coroutines.javafx.JavaFx
-import kotlin.coroutines.CoroutineContext
-import kotlin.coroutines.EmptyCoroutineContext
 
 fun <T> ChoiceBox<T>.onChangeListener(listener: (oldValue: T, newValue: T) -> Unit) {
     this.selectionModel.selectedIndexProperty().addListener { _, oldValue, newValue ->

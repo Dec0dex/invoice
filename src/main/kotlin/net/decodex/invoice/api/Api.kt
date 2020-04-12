@@ -1,6 +1,5 @@
 package net.decodex.invoice.api
 
-import ch.qos.logback.core.net.server.Client
 import com.google.gson.GsonBuilder
 import net.decodex.invoice.utils.PropUtils
 import okhttp3.OkHttpClient

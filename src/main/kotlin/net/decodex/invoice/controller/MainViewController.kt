@@ -17,7 +17,7 @@ import net.decodex.invoice.view.SettingsView
 import java.net.URL
 import java.util.*
 
-class MainViewController: Initializable {
+class MainViewController : Initializable {
 
     @FXML
     private lateinit var statusLabel: Label

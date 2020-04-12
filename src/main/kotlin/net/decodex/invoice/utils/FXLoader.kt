@@ -12,7 +12,7 @@ object FXLoader {
         return loader.load()
     }
 
-    fun <T>load(resource: String): Pair<Parent, T> {
+    fun <T> load(resource: String): Pair<Parent, T> {
         val loader = FXMLLoader()
         loader.location = javaClass.getResource("/$resource")
         loader.resources = LanguageUtils.languageResource

@@ -26,10 +26,10 @@
     </appender>
 
     <root level="debug">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDOUT"/>
     </root>
 
     <logger name="net.decodex" level="info">
-        <appender-ref ref="FILE-ROLLING" />
+        <appender-ref ref="FILE-ROLLING"/>
     </logger>
 </configuration>

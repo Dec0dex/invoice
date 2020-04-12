@@ -5,11 +5,11 @@ import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.ChoiceBox
 import net.decodex.invoice.utils.LanguageUtils
+import net.decodex.invoice.utils.onChangeListener
 import java.net.URL
 import java.util.*
-import net.decodex.invoice.utils.onChangeListener
 
-class SettingsLanguageController : Initializable{
+class SettingsLanguageController : Initializable {
 
     @FXML
     private lateinit var languageChoice: ChoiceBox<Locale>

@@ -8,7 +8,7 @@ import net.decodex.invoice.domain.model.Client
 import net.decodex.invoice.utils.FXLoader
 import net.decodex.invoice.utils.LanguageUtils
 
-class ClientDialog private constructor(private val client: Client?): Dialog<Client>() {
+class ClientDialog private constructor(private val client: Client?) : Dialog<Client>() {
     private var controller: ClientsDialogController
 
     init {

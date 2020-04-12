@@ -2,7 +2,6 @@ package net.decodex.invoice.view
 
 import javafx.scene.Scene
 import javafx.stage.Stage
-import net.decodex.invoice.controller.LoginViewController
 import net.decodex.invoice.controller.MainViewController
 import net.decodex.invoice.utils.FXLoader
 import net.decodex.invoice.utils.ImageLoader

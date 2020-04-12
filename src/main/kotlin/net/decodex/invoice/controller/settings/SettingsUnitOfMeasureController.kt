@@ -3,7 +3,6 @@ package net.decodex.invoice.controller.settings
 import de.jensd.fx.glyphs.GlyphsDude
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon
 import javafx.beans.binding.Bindings
-import javafx.beans.value.ChangeListener
 import javafx.collections.FXCollections
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
