@@ -1,13 +1,18 @@
 package net.decodex.invoice.domain.model
 
-data class Company(
+import java.util.*
+
+data class Client(
     var id: Long,
+    var companyId: Long,
     var name: String,
     var address: String,
     var city: String,
     var postalCode: String,
     var pib: String,
-    var accountNumber: String,
+    var accountNumber: String? = null,
     var phoneNumber: String? = null,
-    var email: String? = null
+    var email: String? = null,
+    var createdAt: Date = Date(),
+    var updatedAt: Date = Date()
 )

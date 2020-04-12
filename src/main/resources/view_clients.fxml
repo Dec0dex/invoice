@@ -13,17 +13,24 @@
                   <TextField fx:id="searchText" prefWidth="300.0" />
                   <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" />
                   <Separator orientation="VERTICAL" />
-                  <Button fx:id="addButton" mnemonicParsing="false" />
-                  <Button fx:id="editButton" mnemonicParsing="false" />
-                  <Button fx:id="deleteButton" mnemonicParsing="false" />
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#add" />
+                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit" />
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete" />
                </items></ToolBar>
          </top>
          <center>
-            <TableView fx:id="clientsTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
+            <TableView fx:id="clientsTableView" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="idColumn" prefWidth="50.0" text="Id" />
+                  <TableColumn fx:id="nameColumn" prefWidth="400.0" text="%name_s" />
+                  <TableColumn fx:id="addressColumn" prefWidth="300.0" text="%address_s" />
+                  <TableColumn fx:id="postalCodeColumn" prefWidth="150.0" text="%postal_code_s" />
+                  <TableColumn fx:id="cityColumn" prefWidth="200.0" text="%city_s" />
+                  <TableColumn fx:id="pibColumn" prefWidth="100.0" text="%pib_s" />
+                  <TableColumn fx:id="accountNumberColumn" prefWidth="200.0" text="%account_number_s" />
+                  <TableColumn fx:id="phoneNumberColumn" prefWidth="150.0" text="%phone_number_s" />
+                  <TableColumn fx:id="emailColumn" prefWidth="200.0" text="%email_s" />
+               </columns>
             </TableView>
          </center>
       </BorderPane>

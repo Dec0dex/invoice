@@ -1,5 +1,6 @@
 package net.decodex.invoice.api
 
+import ch.qos.logback.core.net.server.Client
 import com.google.gson.GsonBuilder
 import net.decodex.invoice.utils.PropUtils
 import okhttp3.OkHttpClient
@@ -17,6 +18,7 @@ object Api {
     var userApi = getRetrofitInstance(serverUrl).create(UserApi::class.java)
     var companyApi = getRetrofitInstance(serverUrl).create(CompanyApi::class.java)
     var unitOfMeasureApi = getRetrofitInstance(serverUrl).create(UnitOfMeasureApi::class.java)
+    var clientApi = getRetrofitInstance(serverUrl).create(ClientApi::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
