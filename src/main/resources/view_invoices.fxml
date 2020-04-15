@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<SplitPane dividerPositions="0.5" orientation="VERTICAL" xmlns="http://javafx.com/javafx/10.0.2-internal"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.InvoicesViewController">
+    <items>
+        <BorderPane prefHeight="200.0" prefWidth="600.0">
+            <top>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <Label text="%search"/>
+                        <TextField fx:id="searchText" prefWidth="300.0"/>
+                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search"/>
+                        <Separator orientation="VERTICAL"/>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#add"/>
+                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit"/>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete"/>
+                        <Separator layoutX="396.0" layoutY="10.0" orientation="VERTICAL"/>
+                        <Button fx:id="printButton" layoutX="450.0" layoutY="11.0" mnemonicParsing="false"
+                                onAction="#print"/>
+                        <Separator layoutX="472.0" layoutY="10.0" orientation="VERTICAL"/>
+                        <Button fx:id="paymentButton" layoutX="482.0" layoutY="11.0" mnemonicParsing="false"
+                                onAction="#makePayment"/>
+                    </items>
+                </ToolBar>
+            </top>
+            <center>
+                <TableView fx:id="invoiceTableView" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true"
+                           BorderPane.alignment="CENTER">
+                    <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="50.0" text="Id"/>
+                        <TableColumn fx:id="nameColumn" prefWidth="100.0" text="%invoice_number_s"/>
+                        <TableColumn fx:id="clientColumn" prefWidth="400.0" text="%client_s"/>
+                        <TableColumn fx:id="dateCreatedColumn" prefWidth="150.0" text="%date_created_s"/>
+                        <TableColumn fx:id="dateOfTrafficColumn" prefWidth="150.0" text="%date_of_traffic_s"/>
+                        <TableColumn fx:id="paymentDueColumn" prefWidth="150.0" text="%payment_due_s"/>
+                        <TableColumn fx:id="valueColumn" prefWidth="200.0" text="%value_s"/>
+                        <TableColumn fx:id="payedValueColumn" prefWidth="200.0" text="%payed_value_s"/>
+                        <TableColumn fx:id="remainingValueColumn" prefWidth="200.0" text="%remaining_value_s"/>
+                    </columns>
+                </TableView>
+            </center>
+        </BorderPane>
+        <BorderPane>
+            <center>
+                <TableView fx:id="invoiceProductsTableView" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                        <TableColumn fx:id="productNumberColumn" text="%serial_number_s"/>
+                        <TableColumn fx:id="productNameColumn" prefWidth="400.0" text="%product_description_s"/>
+                        <TableColumn fx:id="productUomColumn" prefWidth="120.0" text="%unit_of_measure_s"/>
+                        <TableColumn fx:id="productQuantityColumn" prefWidth="120.0" text="%quantity_s"/>
+                        <TableColumn fx:id="productPriceColumn" prefWidth="200.0" text="%price_s"/>
+                        <TableColumn fx:id="productDiscountColumn" prefWidth="100.0" text="%discount_s"/>
+                        <TableColumn fx:id="productWithDiscountValueColumn" prefWidth="200.0" text="%value_s"/>
+                        <TableColumn fx:id="productPdvColumn" prefWidth="100.0" text="%pdv_s"/>
+                        <TableColumn fx:id="productPdvValueColumn" prefWidth="200.0" text="%pdv_in_value_s"/>
+                        <TableColumn fx:id="productValueWithTaxColumn" prefWidth="200.0" text="%value_with_tax_s"/>
+                    </columns>
+                </TableView>
+            </center>
+            <top>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <Label text="%search"/>
+                        <TextField fx:id="searchProductText" prefWidth="300.0"/>
+                        <Button fx:id="searchProductButton" mnemonicParsing="false" onAction="#searchProduct"/>
+                        <Separator orientation="VERTICAL"/>
+                        <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#addProduct"/>
+                        <Button fx:id="editProductButton" mnemonicParsing="false" onAction="#editProduct"/>
+                        <Button fx:id="deleteProductButton" mnemonicParsing="false" onAction="#deleteProduct"/>
+                    </items>
+                </ToolBar>
+            </top>
+        </BorderPane>
+    </items>
+</SplitPane>

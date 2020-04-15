@@ -193,6 +193,10 @@ class ProductsViewController : Initializable {
         }
     }
 
+    fun getSelectedItem(): Product? {
+        return productsTableView.selectionModel.selectedItem
+    }
+
     companion object {
         private val LOG = LoggerFactory.getLogger(this::class.java)
     }

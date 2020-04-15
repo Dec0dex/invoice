@@ -13,17 +13,21 @@ fun <T> ChoiceBox<T>.onChangeListener(listener: (oldValue: T, newValue: T) -> Un
 
 fun <T> ChoiceBox<T>.onChangeListener(listener: (T) -> Unit) {
     this.selectionModel.selectedIndexProperty().addListener { _, _, newValue ->
-        listener(this.items[newValue.toInt()])
+        if (newValue.toInt() >= 0) {
+            listener(this.items[newValue.toInt()])
+        }
     }
 }
 
 fun <T> TableView<T>.onChangeListener(listener: (T) -> Unit) {
     this.selectionModel.selectedIndexProperty().addListener { _, _, newValue ->
-        listener(this.items[newValue.toInt()])
+        if (newValue.toInt() >= 0) {
+            listener(this.items[newValue.toInt()])
+        }
     }
 }
 
-public fun Any.launchOnFxThread(
+fun Any.launchOnFxThread(
     block: suspend CoroutineScope.() -> Unit
 ): Job {
     return GlobalScope.launch(Dispatchers.JavaFx) {

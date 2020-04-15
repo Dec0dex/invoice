@@ -3,7 +3,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane prefHeight="200.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+<BorderPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.ProductsViewController">
     <top>
         <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">

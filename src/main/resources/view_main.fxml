@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <BorderPane fx:id="contentView" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.MainViewController">
     <center>
         <AnchorPane prefHeight="600.0" prefWidth="800.0">
@@ -14,7 +13,7 @@
             <menus>
                 <Menu mnemonicParsing="false" text="%file">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="%users" />
+                        <MenuItem mnemonicParsing="false" onAction="#openUsersView" text="%users"/>
                         <MenuItem mnemonicParsing="false" onAction="#openSettings" text="%settings" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#lockProgram" text="%lock" />
@@ -23,8 +22,11 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="%work">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#openClientsView" text="%clients" />
-                  <MenuItem mnemonicParsing="false" onAction="#openProductsView" text="%products" />
+                        <MenuItem mnemonicParsing="false" onAction="#openInvoicesView" text="%invoices"/>
+                        <MenuItem mnemonicParsing="false" onAction="#openClientsView" text="%clients"/>
+                        <MenuItem mnemonicParsing="false" onAction="#openProductsView" text="%products"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem mnemonicParsing="false" onAction="#openDebtorsView" text="%debtors"/>
                     </items>
                 </Menu>
             </menus>

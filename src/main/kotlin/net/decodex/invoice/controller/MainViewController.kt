@@ -56,6 +56,20 @@ class MainViewController : Initializable {
         contentView.center = FXLoader.load("view_products.fxml")
     }
 
+    @FXML
+    fun openInvoicesView() {
+        contentView.center = FXLoader.load("view_invoices.fxml")
+    }
+
+    @FXML
+    fun openDebtorsView() {
+        TODO("Implement")
+    }
+
+    @FXML
+    fun openUsersView() {
+        TODO("Implement")
+    }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
         HBox.setHgrow(spring, Priority.ALWAYS)

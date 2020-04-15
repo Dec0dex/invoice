@@ -45,20 +45,8 @@ class ProductsDialogController : Initializable {
     }
 
     private fun initializeFields() {
-        price.textProperty().addListener { _, oldValue, newValue ->
-            if(newValue.matches(Regex("^[0-9]*(.)?([0-9]?)+\$"))) {
-                price.text = newValue
-            } else {
-                price.text = oldValue
-            }
-        }
-        pdv.textProperty().addListener { _, oldValue, newValue ->
-            if (newValue.matches(Regex("[0-9]*"))) {
-                pdv.text = newValue
-            } else {
-                pdv.text = oldValue
-            }
-        }
+        ValidationUtils.addDoubleValidation(price)
+        ValidationUtils.addIntValidation(pdv)
     }
 
     private fun initializeData() {
@@ -107,8 +95,8 @@ class ProductsDialogController : Initializable {
             pdv.text.toInt(),
             unitOfMeasure.selectionModel.selectedItem,
             barcode.text,
-            price.text.toDouble(),
-            Cache.user.companyId
+            Cache.user.companyId,
+            price.text.toDouble()
         )
     }
 

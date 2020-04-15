@@ -19,6 +19,7 @@ object Api {
     var unitOfMeasureApi = getRetrofitInstance(serverUrl).create(UnitOfMeasureApi::class.java)
     var clientApi = getRetrofitInstance(serverUrl).create(ClientApi::class.java)
     var productApi = getRetrofitInstance(serverUrl).create(ProductApi::class.java)
+    var invoiceApi = getRetrofitInstance(serverUrl).create(InvoiceApi::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()

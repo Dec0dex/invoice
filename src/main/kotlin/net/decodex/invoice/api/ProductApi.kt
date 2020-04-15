@@ -16,4 +16,10 @@ interface ProductApi {
 
     @GET("product/findAll")
     suspend fun findAllForCompanyId(@Query("company.id") companyId: Long): List<Product>
+
+    @GET("product/{id}")
+    suspend fun findById(@Path("id") productId: Long): Product
+
+    @GET("product/{id}/price/{clientId}")
+    suspend fun getProductPriceForClient(@Path("id") productId: Long, @Path("clientId") clientId: Long): Double
 }
