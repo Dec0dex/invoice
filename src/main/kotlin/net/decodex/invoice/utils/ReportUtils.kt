@@ -100,6 +100,8 @@ object ReportUtils {
 
     private fun convertValueToWords(value: Double): String {
         val converter = MoneyConverters.SERBIAN_BANKING_MONEY_VALUE
-        return converter.asWords(BigDecimal(String.format("%.2f", value).replace(",", ".")))
+        val result =  converter.asWords(BigDecimal(String.format("%.2f", value).replace(",", ".")))
+        val split = result.split(" RSD ")
+        return "${split.first().replace(" ", "")} RSD ${split.last()}"
     }
 }
