@@ -7,6 +7,8 @@ import javafx.collections.FXCollections
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.*
+import javafx.scene.control.Alert.AlertType
+import javafx.scene.control.ButtonBar.ButtonData
 import javafx.scene.control.cell.PropertyValueFactory
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -23,6 +25,7 @@ import net.decodex.invoice.view.MainView
 import org.slf4j.LoggerFactory
 import java.net.URL
 import java.util.*
+
 
 class InvoicesViewController : Initializable {
 
@@ -174,7 +177,26 @@ class InvoicesViewController : Initializable {
     @FXML
     private fun print() {
         val invoice = invoiceTableView.selectionModel.selectedItem
-        ReportUtils.showReport("invoice_unsigned.jasper", invoiceProductsTableView.items, invoice)
+        showShouldSignDialog(invoice)
+    }
+
+    private fun showShouldSignDialog(invoice: Invoice) {
+        val alert = Alert(AlertType.CONFIRMATION)
+        alert.title = LanguageUtils.getString("sign_document")
+        alert.headerText = LanguageUtils.getString("do_you_want_to_sign")
+        alert.contentText = null
+
+        val buttonTypeOne = ButtonType.YES
+        val buttonTypeTwo = ButtonType.NO
+
+        alert.buttonTypes.setAll(buttonTypeOne, buttonTypeTwo)
+
+        val result = alert.showAndWait()
+        if (result.get() === buttonTypeOne) {
+            ReportUtils.showReport("invoice_signed.jasper", invoiceProductsTableView.items, invoice)
+        } else if (result.get() === buttonTypeTwo) {
+            ReportUtils.showReport("invoice_unsigned.jasper", invoiceProductsTableView.items, invoice)
+        }
     }
 
     @FXML

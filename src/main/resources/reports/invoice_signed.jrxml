@@ -656,7 +656,7 @@
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="191" splitType="Stretch">
+		<band height="240" splitType="Stretch">
 			<staticText>
 				<reportElement x="-1" y="171" width="160" height="20" uuid="f9534eeb-7a29-4392-92cd-51994b7150d8"/>
 				<box>
@@ -791,6 +791,14 @@
 				</textElement>
 				<textFieldExpression><![CDATA["Slovima: "+ $P{INVOICE_REMAINING_AMOUNT_WORDS}]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="8" y="140" width="148" height="50" uuid="6fa74ac5-0d4e-40b3-8dfd-055f820a0c59"/>
+				<imageExpression><![CDATA["images/potpis.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="-5" y="179" width="170" height="61" uuid="b863ff07-7c99-454a-8101-9ba9dbc6b10f"/>
+				<imageExpression><![CDATA["images/pecat.png"]]></imageExpression>
+			</image>
 		</band>
 	</summary>
 </jasperReport>
