@@ -8,11 +8,14 @@ repositories {
     jcenter()
     mavenCentral()
     google()
+    maven { setUrl("http://jasperreports.sourceforge.net/maven2/") }
+    maven { setUrl("http://jaspersoft.artifactoryonline.com/jaspersoft/third-party-ce-artifacts/") }
+
 }
 
 javafx {
     version = "14"
-    modules("javafx.controls", "javafx.fxml")
+    modules("javafx.controls", "javafx.fxml", "javafx.swing")
 }
 
 dependencies {
@@ -22,7 +25,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-javafx:1.3.5")
     implementation("com.squareup.retrofit2:retrofit:2.6.0")
     implementation("com.squareup.retrofit2:converter-gson:2.6.0")
-//    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+    implementation("net.sf.jasperreports:jasperreports:6.12.2")
     implementation("ch.qos.logback:logback-classic:1.2.3")
     implementation("de.jensd:fontawesomefx:8.9")
 

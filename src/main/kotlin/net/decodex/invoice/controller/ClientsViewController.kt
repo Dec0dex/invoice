@@ -12,10 +12,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import net.decodex.invoice.api.Api
 import net.decodex.invoice.domain.model.Client
-import net.decodex.invoice.utils.AlertUtils
-import net.decodex.invoice.utils.Cache
-import net.decodex.invoice.utils.LanguageUtils
-import net.decodex.invoice.utils.launchOnFxThread
+import net.decodex.invoice.domain.model.Invoice
+import net.decodex.invoice.utils.*
 import net.decodex.invoice.view.ClientDialog
 import net.decodex.invoice.view.MainView
 import org.slf4j.LoggerFactory
@@ -44,6 +42,9 @@ class ClientsViewController : Initializable {
     private lateinit var clientsTableView: TableView<Client>
 
     @FXML
+    private lateinit var invoiceTableView: TableView<Invoice>
+
+    @FXML
     private lateinit var idColumn: TableColumn<Long, Client>
 
     @FXML
@@ -69,6 +70,30 @@ class ClientsViewController : Initializable {
 
     @FXML
     private lateinit var emailColumn: TableColumn<String, Client>
+
+    @FXML
+    private lateinit var invoiceDateCreatedColumn: TableColumn<String, Invoice>
+
+    @FXML
+    private lateinit var invoiceDateOfTrafficColumn: TableColumn<String, Invoice>
+
+    @FXML
+    private lateinit var invoicePaymentDueColumn: TableColumn<String, Invoice>
+
+    @FXML
+    private lateinit var invoiceValueColumn: TableColumn<Double, Invoice>
+
+    @FXML
+    private lateinit var invoicePayedValueColumn: TableColumn<Double, Invoice>
+
+    @FXML
+    private lateinit var invoiceRemainingValueColumn: TableColumn<Double, Invoice>
+
+    @FXML
+    private lateinit var invoiceIdColumn: TableColumn<Long, Invoice>
+
+    @FXML
+    private lateinit var invoiceNameColumn: TableColumn<String, Invoice>
 
     @FXML
     private fun search() {
@@ -122,14 +147,26 @@ class ClientsViewController : Initializable {
         accountNumberColumn.cellValueFactory = PropertyValueFactory("accountNumber")
         phoneNumberColumn.cellValueFactory = PropertyValueFactory("phoneNumber")
         emailColumn.cellValueFactory = PropertyValueFactory("email")
+
+        //Invoice table
+        invoiceIdColumn.cellValueFactory = PropertyValueFactory("id")
+        invoiceNameColumn.cellValueFactory = PropertyValueFactory("name")
+        invoiceDateCreatedColumn.cellValueFactory = PropertyValueFactory("dateCreatedText")
+        invoiceDateOfTrafficColumn.cellValueFactory = PropertyValueFactory("dateOfTrafficText")
+        invoicePaymentDueColumn.cellValueFactory = PropertyValueFactory("paymentDueText")
+        invoiceValueColumn.cellValueFactory = PropertyValueFactory("sum")
+        invoicePayedValueColumn.cellValueFactory = PropertyValueFactory("payedAmount")
+        invoiceRemainingValueColumn.cellValueFactory = PropertyValueFactory("remainingAmount")
     }
 
     private fun bindTableViewSelection() {
         clientsTableView.isEditable = false
         clientsTableView.selectionModel.selectionMode = SelectionMode.SINGLE
+        invoiceTableView.isEditable = false
         editButton.disableProperty().bind(Bindings.isEmpty(clientsTableView.selectionModel.selectedItems))
         deleteButton.disableProperty().bind(Bindings.isEmpty(clientsTableView.selectionModel.selectedItems))
         searchText.textProperty().addListener { _-> search() }
+        clientsTableView.onChangeListener { searchForClientDebts() }
     }
 
     private fun setButtonIcons() {
@@ -201,6 +238,26 @@ class ClientsViewController : Initializable {
                 initializeData()
             }
         }
+    }
+
+    private fun searchForClientDebts() {
+        GlobalScope.launch {
+            try {
+                MainView.instance.controler.setProgress(ProgressIndicator.INDETERMINATE_PROGRESS)
+                MainView.instance.controler.setStatusText(LanguageUtils.getString("fetching_invoices"))
+                val result = FXCollections.observableArrayList(Api.invoiceApi.findAllForCompanyIdWhichAreNotPayedForClientId(Cache.user.companyId, clientsTableView.selectionModel.selectedItem.id))
+                launchOnFxThread { invoiceTableView.items = result }
+            } catch (ex: Exception) {
+                AlertUtils.showFailedToLoadData()
+                LOG.error("Failed to load invoices data", ex)
+            } finally {
+                MainView.instance.controler.resetStatus()
+            }
+        }
+    }
+
+    fun getSelectedItem(): Client? {
+        return clientsTableView.selectionModel.selectedItem
     }
 
     companion object {

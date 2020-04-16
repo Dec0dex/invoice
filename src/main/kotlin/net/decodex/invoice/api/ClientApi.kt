@@ -16,4 +16,7 @@ interface ClientApi {
 
     @GET("client/findAll")
     suspend fun findAllForCompanyId(@Query("company.id") companyId: Long): List<Client>
+
+    @GET("client/{id}")
+    suspend fun findById(@Path("id") clientId: Long): Client
 }

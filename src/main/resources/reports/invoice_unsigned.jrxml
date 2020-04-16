@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice_unsigned" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="d9fd2267-91e0-47ec-b30d-3f5f2bb8a88b">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<parameter name="COMPANY_NAME" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="COMPANY_ADDRESS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="COMPANY_PHONE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["-/-"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="COMPANY_ACCOUNT_NUMBER" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="COMPANY_PIB" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="COMPANY_EMAIL" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["-/-"]]></defaultValueExpression>
+	</parameter>
+	<title>
+		<band height="234" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="280" height="20" uuid="90faa74a-c73d-4b92-b94c-8ae857baee58"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{COMPANY_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="30" width="280" height="14" uuid="86e3eec8-a704-449e-b57c-d1d060e7486a"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{COMPANY_ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="44" width="280" height="14" uuid="710f8118-4725-4bb1-b428-2f90b48a0ac2"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PIB: " + $P{COMPANY_PIB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="58" width="280" height="14" uuid="b725175c-7d58-4949-b073-97320044c1da"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tekući račun: " + $P{COMPANY_ACCOUNT_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="260" height="30" uuid="17a4ec90-89d9-46aa-b560-247574bf925a"/>
+				<textElement textAlignment="Right" markup="html">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["tel: " + "<b>" + $P{COMPANY_PHONE} + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="36" width="260" height="30" uuid="9eeb11cf-e390-42ab-9382-764b3d6235d6"/>
+				<textElement textAlignment="Right" markup="html">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["e-mail: " + "<b>" + $P{COMPANY_EMAIL} + "</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="400" y="0" width="100" height="30" uuid="d0be0813-badb-4402-8dc5-2d9a624289e5">
+					<property name="com.jaspersoft.studio.unit.x" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Stranica " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="0" width="100" height="30" uuid="24912933-9721-4149-b579-7033bf91cac2"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" od " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="40" width="160" height="20" uuid="f9534eeb-7a29-4392-92cd-51994b7150d8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Robu predao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="40" width="180" height="20" uuid="ec3083d8-1cde-4c93-91ca-94b444051b3a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Robu primio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="40" width="160" height="20" uuid="378dbe92-1f6f-4792-9e6e-6ce0062aa735"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Odgovorno lice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="20" width="160" height="20" uuid="cd605169-b432-4501-8e7b-33898315f709"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Emilija Žigon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="20" width="78" height="20" uuid="d56816a0-5536-4613-9dcc-b072910c33b1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[l.k. br.:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

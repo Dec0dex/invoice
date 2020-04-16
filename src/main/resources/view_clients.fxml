@@ -5,7 +5,7 @@
 <SplitPane dividerPositions="0.5" orientation="VERTICAL" xmlns="http://javafx.com/javafx/10.0.2-internal"
            xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.ClientsViewController">
     <items>
-        <BorderPane prefHeight="200.0" prefWidth="600.0">
+        <BorderPane prefHeight="600.0" prefWidth="1000.0">
             <top>
                 <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <items>
@@ -36,10 +36,16 @@
                 </TableView>
             </center>
         </BorderPane>
-        <TableView prefHeight="200.0" prefWidth="200.0">
+        <TableView fx:id="invoiceTableView" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
             <columns>
-                <TableColumn prefWidth="75.0" text="C1"/>
-                <TableColumn prefWidth="75.0" text="C2"/>
+                <TableColumn fx:id="invoiceIdColumn" prefWidth="50.0" text="Id"/>
+                <TableColumn fx:id="invoiceNameColumn" prefWidth="100.0" text="%invoice_number_s"/>
+                <TableColumn fx:id="invoiceDateCreatedColumn" prefWidth="150.0" text="%date_created_s"/>
+                <TableColumn fx:id="invoiceDateOfTrafficColumn" prefWidth="150.0" text="%date_of_traffic_s"/>
+                <TableColumn fx:id="invoicePaymentDueColumn" prefWidth="150.0" text="%payment_due_s"/>
+                <TableColumn fx:id="invoiceValueColumn" prefWidth="200.0" text="%value_s"/>
+                <TableColumn fx:id="invoicePayedValueColumn" prefWidth="200.0" text="%payed_value_s"/>
+                <TableColumn fx:id="invoiceRemainingValueColumn" prefWidth="200.0" text="%remaining_value_s"/>
             </columns>
         </TableView>
     </items>

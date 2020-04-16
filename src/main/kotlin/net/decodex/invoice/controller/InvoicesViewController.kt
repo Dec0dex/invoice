@@ -11,11 +11,13 @@ import javafx.scene.control.cell.PropertyValueFactory
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import net.decodex.invoice.api.Api
+import net.decodex.invoice.domain.dto.CreateInvoiceDto
 import net.decodex.invoice.domain.dto.CreateInvoiceProductDto
 import net.decodex.invoice.domain.model.Invoice
 import net.decodex.invoice.domain.model.Product
 import net.decodex.invoice.domain.model.UnitOfMeasure
 import net.decodex.invoice.utils.*
+import net.decodex.invoice.view.InvoiceDialog
 import net.decodex.invoice.view.InvoiceProductDialog
 import net.decodex.invoice.view.MainView
 import org.slf4j.LoggerFactory
@@ -139,22 +141,40 @@ class InvoicesViewController : Initializable {
 
     @FXML
     private fun add() {
-
+        val result = InvoiceDialog.newInstance().showAndWait()
+        if (result.isPresent) {
+            addItem(result.get())
+        }
     }
 
     @FXML
     private fun edit() {
-
+        val selectedItem = invoiceTableView.selectionModel.selectedItem
+        val invoice = CreateInvoiceDto(
+            selectedItem.client.id,
+            selectedItem.company.id,
+            selectedItem.dateCreated,
+            selectedItem.dateOfTraffic,
+            selectedItem.paymentDue,
+            selectedItem.id
+        )
+        val result = InvoiceDialog.newInstance(invoice).showAndWait()
+        if (result.isPresent) {
+            editItem(result.get())
+        }
     }
 
     @FXML
     private fun delete() {
-
+        if (AlertUtils.deleteConfirmation()) {
+            deleteItem(invoiceTableView.selectionModel.selectedItem.id)
+        }
     }
 
     @FXML
     private fun print() {
-
+        val invoice = invoiceTableView.selectionModel.selectedItem
+        ReportUtils.showReport("invoice_unsigned.jasper", invoiceProductsTableView.items, invoice)
     }
 
     @FXML
@@ -316,6 +336,54 @@ class InvoicesViewController : Initializable {
         }
     }
 
+    private fun addItem(dto: CreateInvoiceDto) {
+        GlobalScope.launch {
+            try {
+                MainView.instance.controler.setProgress(ProgressIndicator.INDETERMINATE_PROGRESS)
+                MainView.instance.controler.setStatusText(LanguageUtils.getString("creating_invoice"))
+                Api.invoiceApi.create(dto)
+            } catch (ex: Exception) {
+                AlertUtils.showFailedToCreate()
+                LOG.error("Failed to create invoice", ex)
+            } finally {
+                MainView.instance.controler.resetStatus()
+                initializeData()
+            }
+        }
+    }
+
+    private fun editItem(dto: CreateInvoiceDto) {
+        GlobalScope.launch {
+            try {
+                MainView.instance.controler.setProgress(ProgressIndicator.INDETERMINATE_PROGRESS)
+                MainView.instance.controler.setStatusText(LanguageUtils.getString("updating_invoice"))
+                Api.invoiceApi.update(dto)
+            } catch (ex: Exception) {
+                AlertUtils.showFailedToCreate()
+                LOG.error("Failed to update invoice", ex)
+            } finally {
+                MainView.instance.controler.resetStatus()
+                initializeData()
+            }
+        }
+    }
+
+    private fun deleteItem(invoiceId: Long) {
+        GlobalScope.launch {
+            try {
+                MainView.instance.controler.setProgress(ProgressIndicator.INDETERMINATE_PROGRESS)
+                MainView.instance.controler.setStatusText(LanguageUtils.getString("deleting_invoice"))
+                Api.invoiceApi.delete(invoiceId)
+            } catch (ex: Exception) {
+                AlertUtils.showFailedToCreate()
+                LOG.error("Failed to update delete", ex)
+            } finally {
+                MainView.instance.controler.resetStatus()
+                initializeData()
+            }
+        }
+    }
+
     private fun addProductItem(invoiceId: Long, dto: CreateInvoiceProductDto) {
         GlobalScope.launch {
             try {
@@ -352,11 +420,11 @@ class InvoicesViewController : Initializable {
         GlobalScope.launch {
             try {
                 MainView.instance.controler.setProgress(ProgressIndicator.INDETERMINATE_PROGRESS)
-                MainView.instance.controler.setStatusText(LanguageUtils.getString("updating_invoice_product"))
+                MainView.instance.controler.setStatusText(LanguageUtils.getString("deleting_invoice_product"))
                 Api.invoiceApi.deleteInvoiceProduct(invoiceId, priceId)
             } catch (ex: Exception) {
                 AlertUtils.showFailedToCreate()
-                LOG.error("Failed to update invoice product", ex)
+                LOG.error("Failed to delete invoice product", ex)
             } finally {
                 MainView.instance.controler.resetStatus()
                 initializeData()
