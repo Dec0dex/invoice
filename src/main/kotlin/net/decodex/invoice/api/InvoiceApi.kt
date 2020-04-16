@@ -17,6 +17,10 @@ interface InvoiceApi {
     @DELETE("invoice/{id}")
     suspend fun delete(@Path("id") invoiceId: Long)
 
+    @POST("invoice/{id}")
+    suspend fun makePayment(@Path("id") invoiceId: Long, @Body
+    paymentValue: Double)
+
     @GET("invoice/findAll")
     suspend fun findAllForCompanyId(@Query("company.id") companyId: Long): List<Invoice>
 

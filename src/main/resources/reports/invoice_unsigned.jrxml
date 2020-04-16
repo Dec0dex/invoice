@@ -778,7 +778,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<paragraph rightIndent="2"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{INVOICE_SUM}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{INVOICE_REMAINING_AMOUNT}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>

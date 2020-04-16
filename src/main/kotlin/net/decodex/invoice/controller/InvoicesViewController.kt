@@ -179,7 +179,15 @@ class InvoicesViewController : Initializable {
 
     @FXML
     private fun makePayment() {
+        val dialog = TextInputDialog()
+        dialog.title = LanguageUtils.getString("make_payment")
+        dialog.headerText = null
+        dialog.contentText = LanguageUtils.getString("value")
 
+        val result = dialog.showAndWait()
+        if (result.isPresent) {
+            makePaymentViaApi(result)
+        }
     }
 
     @FXML
@@ -233,6 +241,23 @@ class InvoicesViewController : Initializable {
         bindTableViewSelection()
         setupTableColumns()
         initializeData()
+    }
+
+    private fun makePaymentViaApi(result: Optional<String>) {
+        GlobalScope.launch {
+            try {
+                MainView.instance.controler.setProgress(ProgressIndicator.INDETERMINATE_PROGRESS)
+                MainView.instance.controler.setStatusText(LanguageUtils.getString("updating_invoice"))
+                val selectedItem = invoiceTableView.selectionModel.selectedItem
+                Api.invoiceApi.makePayment(selectedItem.id, result.get().toDouble())
+            } catch (ex: Exception) {
+                LOG.error("Couldn't make payment", ex)
+                AlertUtils.showFailedToSave()
+            } finally {
+                MainView.instance.controler.resetStatus()
+                initializeData()
+            }
+        }
     }
 
     private fun bindTableViewSelection() {
