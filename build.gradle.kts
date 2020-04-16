@@ -26,6 +26,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.6.0")
     implementation("com.squareup.retrofit2:converter-gson:2.6.0")
     implementation("net.sf.jasperreports:jasperreports:6.12.2")
+    implementation("net.sf.jasperreports:jasperreports-functions:6.12.2")
     implementation("ch.qos.logback:logback-classic:1.2.3")
     implementation("de.jensd:fontawesomefx:8.9")
 
