@@ -11,6 +11,7 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="style1" isDefault="true" pdfEncoding="Cp1252"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -98,49 +99,49 @@
 			<textField>
 				<reportElement x="0" y="0" width="280" height="20" uuid="90faa74a-c73d-4b92-b94c-8ae857baee58"/>
 				<textElement>
-					<font size="14" isBold="true"/>
+					<font fontName="DejaVu Sans" size="14" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{COMPANY_NAME}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="30" width="280" height="14" uuid="86e3eec8-a704-449e-b57c-d1d060e7486a"/>
 				<textElement>
-					<font size="11"/>
+					<font fontName="DejaVu Sans" size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{COMPANY_ADDRESS} + ", " + $P{COMPANY_POSTAL}  + " " + $P{COMPANY_CITY}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="44" width="280" height="14" uuid="710f8118-4725-4bb1-b428-2f90b48a0ac2"/>
 				<textElement>
-					<font size="11"/>
+					<font fontName="DejaVu Sans" size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA["PIB: " + $P{COMPANY_PIB}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="58" width="280" height="14" uuid="b725175c-7d58-4949-b073-97320044c1da"/>
 				<textElement>
-					<font size="11" isBold="true"/>
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Tekući račun: " + $P{COMPANY_ACCOUNT_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="280" y="0" width="260" height="30" uuid="17a4ec90-89d9-46aa-b560-247574bf925a"/>
 				<textElement textAlignment="Right" markup="html">
-					<font size="11" isBold="false"/>
+					<font fontName="DejaVu Sans" size="11" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["tel: " + "<b>" + $P{COMPANY_PHONE} + "</b>"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="280" y="36" width="260" height="30" uuid="9eeb11cf-e390-42ab-9382-764b3d6235d6"/>
 				<textElement textAlignment="Right" markup="html">
-					<font size="11" isBold="false"/>
+					<font fontName="DejaVu Sans" size="11" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["e-mail: " + "<b>" + $P{COMPANY_EMAIL} + "</b>"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="99" width="251" height="14" uuid="810f7920-eb54-412a-a4f8-d287fb171d27"/>
 				<textElement>
-					<font size="11" isBold="true"/>
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["RAČUN-OTPREMNICA Br. " + $P{INVOICE_NAME}]]></textFieldExpression>
 			</textField>
@@ -150,97 +151,112 @@
 			<textField>
 				<reportElement x="290" y="99" width="238" height="14" uuid="a9b6c594-4f4c-4d9c-b7cb-b5361a94d29c"/>
 				<textElement>
-					<font size="11" isBold="true"/>
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[UPPER( $P{CLIENT_NAME})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="290" y="119" width="239" height="14" uuid="19eca16d-d59b-4903-b1c7-4b7d7736d4ae"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{CLIENT_ADDRESS}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="290" y="133" width="239" height="14" uuid="241f7448-fc37-4cb6-80f7-ae7021e6bd4b"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{CLIENT_POSTAL} + " " + $P{CLIENT_CITY}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="290" y="147" width="239" height="14" uuid="a8b88950-260c-418b-a525-2ef3cb91d210"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{CLIENT_EMAIL}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="290" y="183" width="239" height="14" uuid="23e6bb17-a53f-451a-90f1-f8dd4c1ddcc1"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{CLIENT_ACCOUNT_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="290" y="169" width="239" height="14" uuid="beed8fa6-bc6c-4f99-8c9a-2aae22033ae2"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA["PIB: " + $P{CLIENT_PIB}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="223" width="110" height="11" uuid="64da1853-3c98-4466-a20c-9780340acaed"/>
 				<textElement>
-					<font size="8"/>
+					<font fontName="DejaVu Sans" size="8"/>
 				</textElement>
 				<text><![CDATA[Skladište: Gotovi proizvodi]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="119" width="120" height="14" uuid="daa8a5ba-f4bb-45be-99e0-48fdd860c5e6"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<text><![CDATA[Mesto i datum izdavanja:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="135" width="120" height="22" uuid="a46cd1b8-48d3-45cb-a592-7c39f517fd7f"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<text><![CDATA[Mesto i datum prometa dobara i usluga:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="159" width="120" height="14" uuid="211304d1-0a74-4b29-8dda-629192facfe0"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<text><![CDATA[Rok uplate:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="179" width="120" height="14" uuid="2019fd7f-aa16-4385-9e95-d59805687686"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<text><![CDATA[Adresa skladišta kupca:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="120" y="119" width="131" height="14" uuid="8b392115-1bc7-4dc4-95ce-b78638c66454"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{COMPANY_CITY} + ", " + $P{INVOICE_DATE_CREATED}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="139" width="131" height="14" uuid="1c15f0e0-f673-4798-8d8e-0ad8347a1820"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{COMPANY_CITY} + ", " + $P{INVOICE_DATE_OF_TRAFFIC}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="159" width="131" height="14" uuid="832934d4-2e8a-4b33-8b32-4249a29cbe66"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{INVOICE_PAYMENT_DUE}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="179" width="131" height="14" uuid="703aea88-3fd0-4d14-9693-b461ba5ae425"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{CLIENT_ADDRESS}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="193" width="131" height="14" uuid="e99652af-5e9b-4a8b-80cf-51330012c1f8"/>
 				<textElement>
-					<font size="9"/>
+					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{CLIENT_POSTAL} + " " + $P{CLIENT_CITY}]]></textFieldExpression>
 			</textField>
@@ -638,19 +654,25 @@
 				<reportElement x="400" y="0" width="100" height="30" uuid="d0be0813-badb-4402-8dc5-2d9a624289e5">
 					<property name="com.jaspersoft.studio.unit.x" value="cm"/>
 				</reportElement>
-				<textElement textAlignment="Right"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA["Stranica " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
 				<reportElement x="500" y="0" width="100" height="30" uuid="24912933-9721-4149-b579-7033bf91cac2"/>
-				<textElement textAlignment="Left"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[" od " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="0" width="202" height="30" uuid="299e15d9-4606-472f-b72f-5f61c39bddaf">
 					<property name="com.jaspersoft.studio.unit.x" value="cm"/>
 				</reportElement>
-				<textElement textAlignment="Left"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{INVOICE_NAME} + " od " + $P{INVOICE_DATE_CREATED}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -662,7 +684,9 @@
 				<box>
 					<topPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Robu predao]]></text>
 			</staticText>
 			<staticText>
@@ -670,7 +694,9 @@
 				<box>
 					<topPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Robu primio]]></text>
 			</staticText>
 			<staticText>
@@ -678,48 +704,64 @@
 				<box>
 					<topPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Odgovorno lice]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="379" y="151" width="160" height="20" uuid="cd605169-b432-4501-8e7b-33898315f709"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Emilija Žigon]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="279" y="151" width="78" height="20" uuid="d56816a0-5536-4613-9dcc-b072910c33b1"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[l.k. br.:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="320" y="21" width="100" height="14" uuid="c0cff5db-0ca8-4193-80dd-44ed46628f1d"/>
-				<textElement textAlignment="Right"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[Osnovica za PDV:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="320" y="35" width="100" height="14" uuid="4f01e08e-ec88-4db2-ba6f-49413061b9a0"/>
-				<textElement textAlignment="Right"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[PDV:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="320" y="52" width="100" height="17" uuid="a001f949-f8bd-4018-95dd-8e4a481254c2">
 					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
 				</reportElement>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[UKUPNO:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="320" y="72" width="100" height="17" uuid="8a451284-c514-406c-b804-174cf9385bc1">
 					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
 				</reportElement>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[PLAĆENO:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="310" y="92" width="110" height="17" uuid="f78f76d4-cfe7-40a6-a63e-5d42c75be3e7">
 					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
 				</reportElement>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
 				<text><![CDATA[UKUPNO ZA UPLATU:]]></text>
 			</staticText>
 			<textField pattern="#,##0.00">
@@ -727,6 +769,7 @@
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 				</reportElement>
 				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
 					<paragraph rightIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_VALUE_SUM}]]></textFieldExpression>
@@ -736,6 +779,7 @@
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 				</reportElement>
 				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
 					<paragraph rightIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_TAX_VALUE_SUM}]]></textFieldExpression>
@@ -752,6 +796,7 @@
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
 					<paragraph rightIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{INVOICE_SUM}]]></textFieldExpression>
@@ -768,6 +813,7 @@
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
 					<paragraph rightIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{INVOICE_PAYED_AMOUNT}]]></textFieldExpression>
@@ -778,6 +824,7 @@
 					<pen lineWidth="2.0" lineStyle="Double"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
 					<paragraph rightIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{INVOICE_REMAINING_AMOUNT}]]></textFieldExpression>
@@ -787,6 +834,7 @@
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="DejaVu Sans"/>
 					<paragraph rightIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Slovima: "+ $P{INVOICE_REMAINING_AMOUNT_WORDS}]]></textFieldExpression>
