@@ -86,6 +86,7 @@
 	<parameter name="INVOICE_SUM" class="java.lang.Double" isForPrompting="false"/>
 	<parameter name="INVOICE_PAYED_AMOUNT" class="java.lang.Double" isForPrompting="false"/>
 	<parameter name="INVOICE_REMAINING_AMOUNT" class="java.lang.Double" isForPrompting="false"/>
+	<parameter name="INVOICE_REMAINING_AMOUNT_WORDS" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="INVOICE_DATE_OF_TRAFFIC" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="INVOICE_DATE_CREATED" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="INVOICE_NAME" class="java.lang.String" isForPrompting="false"/>
@@ -656,7 +657,7 @@
 	<summary>
 		<band height="209" splitType="Stretch">
 			<staticText>
-				<reportElement x="-1" y="160" width="160" height="20" uuid="f9534eeb-7a29-4392-92cd-51994b7150d8"/>
+				<reportElement x="-1" y="171" width="160" height="20" uuid="f9534eeb-7a29-4392-92cd-51994b7150d8"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 				</box>
@@ -664,7 +665,7 @@
 				<text><![CDATA[Robu predao]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="178" y="160" width="180" height="20" uuid="ec3083d8-1cde-4c93-91ca-94b444051b3a"/>
+				<reportElement x="178" y="171" width="180" height="20" uuid="ec3083d8-1cde-4c93-91ca-94b444051b3a"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 				</box>
@@ -672,7 +673,7 @@
 				<text><![CDATA[Robu primio]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="379" y="160" width="160" height="20" uuid="378dbe92-1f6f-4792-9e6e-6ce0062aa735"/>
+				<reportElement x="379" y="171" width="160" height="20" uuid="378dbe92-1f6f-4792-9e6e-6ce0062aa735"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 				</box>
@@ -680,12 +681,12 @@
 				<text><![CDATA[Odgovorno lice]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="379" y="140" width="160" height="20" uuid="cd605169-b432-4501-8e7b-33898315f709"/>
+				<reportElement x="379" y="151" width="160" height="20" uuid="cd605169-b432-4501-8e7b-33898315f709"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Emilija Žigon]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="279" y="140" width="78" height="20" uuid="d56816a0-5536-4613-9dcc-b072910c33b1"/>
+				<reportElement x="279" y="151" width="78" height="20" uuid="d56816a0-5536-4613-9dcc-b072910c33b1"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<text><![CDATA[l.k. br.:]]></text>
 			</staticText>
@@ -779,6 +780,15 @@
 					<paragraph rightIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{INVOICE_REMAINING_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="114" width="539" height="37" uuid="5c6c27b1-d3a0-4a26-a134-a2d7d149ae7f">
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Slovima: "+ $P{INVOICE_REMAINING_AMOUNT_WORDS}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>

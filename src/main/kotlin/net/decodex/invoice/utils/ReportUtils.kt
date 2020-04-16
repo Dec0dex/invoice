@@ -14,6 +14,8 @@ import net.sf.jasperreports.engine.JasperReport
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import net.sf.jasperreports.engine.util.JRLoader
 import net.sf.jasperreports.swing.JRViewer
+import pl.allegro.finance.tradukisto.MoneyConverters
+import java.math.BigDecimal
 import javax.swing.SwingUtilities
 import javax.swing.UIManager
 import javax.swing.UnsupportedLookAndFeelException
@@ -93,21 +95,11 @@ object ReportUtils {
         map["INVOICE_DATE_OF_TRAFFIC"] = invoice.getDateOfTrafficText()
         map["INVOICE_DATE_CREATED"] = invoice.getDateCreatedText()
         map["INVOICE_NAME"] = invoice.name
+        map["INVOICE_REMAINING_AMOUNT_WORDS"] = convertValueToWords(invoice.remainingAmount)
     }
 
-    fun setLookAndFeel() {
-        SwingUtilities.invokeLater {
-            try {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName())
-            } catch (e: ClassNotFoundException) {
-                e.printStackTrace()
-            } catch (e: InstantiationException) {
-                e.printStackTrace()
-            } catch (e: IllegalAccessException) {
-                e.printStackTrace()
-            } catch (e: UnsupportedLookAndFeelException) {
-                e.printStackTrace()
-            }
-        }
+    private fun convertValueToWords(value: Double): String {
+        val converter = MoneyConverters.SERBIAN_BANKING_MONEY_VALUE
+        return converter.asWords(BigDecimal(String.format("%.2f", value).replace(",", ".")))
     }
 }

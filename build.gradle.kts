@@ -29,6 +29,7 @@ dependencies {
     implementation("net.sf.jasperreports:jasperreports-functions:6.12.2")
     implementation("ch.qos.logback:logback-classic:1.2.3")
     implementation("de.jensd:fontawesomefx:8.9")
+    implementation("pl.allegro.finance:tradukisto:1.8.0")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
