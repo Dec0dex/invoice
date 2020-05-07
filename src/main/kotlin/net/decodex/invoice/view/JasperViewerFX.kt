@@ -154,7 +154,7 @@ class JasperViewerFX : Dialog<Void?>() {
         val root = BorderPane()
         root.top = menu
         root.center = scroll
-        root.setPrefSize(1024.0, 768.0)
+        root.setPrefSize(1000.0, 500.0)
         return root
     }
     // ***********************************************
