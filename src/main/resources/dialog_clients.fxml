@@ -26,16 +26,18 @@
         <Label text="%postal_code" GridPane.rowIndex="2"/>
         <Label text="%city" GridPane.rowIndex="3"/>
         <Label text="%pib" GridPane.rowIndex="4"/>
-        <Label text="%account_number" GridPane.rowIndex="5"/>
-        <Label text="%phone_number" GridPane.rowIndex="6"/>
+        <Label text="%registration_number" GridPane.rowIndex="5"/>
+        <Label text="%account_number" GridPane.rowIndex="6"/>
+        <Label text="%phone_number" GridPane.rowIndex="7"/>
+        <Label text="%email" GridPane.rowIndex="8"/>
         <TextField fx:id="address" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"/>
         <TextField fx:id="postalCode" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2"/>
         <TextField fx:id="city" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3"/>
         <TextField fx:id="pib" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4"/>
-        <TextField fx:id="accountNumber" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5"/>
-        <TextField fx:id="phoneNumber" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6"/>
-        <TextField fx:id="email" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7"/>
-        <Label text="%email" GridPane.rowIndex="7"/>
+        <TextField fx:id="registrationNumber" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5"/>
+        <TextField fx:id="accountNumber" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6"/>
+        <TextField fx:id="phoneNumber" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7"/>
+        <TextField fx:id="email" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8"/>
     </children>
     <padding>
         <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>

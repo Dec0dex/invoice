@@ -27,7 +27,7 @@ object ReportUtils {
                 JRLoader.loadObject(ReportUtils::class.java.getResource("/reports/$reportFile")) as JasperReport
             val jprint = JasperFillManager.fillReport(jreport, parameters, JREmptyDataSource())
 
-            JasperViewerFX().viewReport("Fakturisanje", jprint)
+            JasperViewerFX().viewReport(LanguageUtils.getString("app_name"), jprint)
         } catch (e: JRException) {
             e.printStackTrace()
         }
@@ -48,6 +48,7 @@ object ReportUtils {
         map["COMPANY_PHONE"] = company.phoneNumber ?: ""
         map["COMPANY_ACCOUNT_NUMBER"] = company.accountNumber
         map["COMPANY_PIB"] = company.pib
+        map["COMPANY_REGISTRATION_NUMBER"] = company.registrationNumber
         map["COMPANY_EMAIL"] = company.email ?: "-/-"
         map["COMPANY_CITY"] = company.city
         map["COMPANY_POSTAL"] = company.postalCode
@@ -58,6 +59,7 @@ object ReportUtils {
         map["CLIENT_EMAIL"] = client.email ?: ""
         map["CLIENT_ACCOUNT_NUMBER"] = client.accountNumber ?: ""
         map["CLIENT_PIB"] = client.pib
+        map["CLIENT_REGISTRATION_NUMBER"] = client.registrationNumber
         map["CLIENT_POSTAL"] = client.postalCode
         map["CLIENT_ADDRESS"] = client.address
         map["CLIENT_NAME"] = client.name

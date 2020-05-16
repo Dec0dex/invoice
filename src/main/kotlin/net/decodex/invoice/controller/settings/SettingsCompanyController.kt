@@ -38,6 +38,9 @@ class SettingsCompanyController : Initializable {
     private lateinit var pib: TextField
 
     @FXML
+    private lateinit var registrationNumber: TextField
+
+    @FXML
     private lateinit var accountNumber: TextField
 
     @FXML
@@ -62,6 +65,7 @@ class SettingsCompanyController : Initializable {
                         city.text,
                         postalCode.text,
                         pib.text,
+                        registrationNumber.text,
                         accountNumber.text,
                         phoneNumber.text,
                         email.text
@@ -100,6 +104,7 @@ class SettingsCompanyController : Initializable {
             city.text = company.city
             postalCode.text = company.postalCode
             pib.text = company.pib
+            registrationNumber.text = company.registrationNumber
             accountNumber.text = company.accountNumber
             phoneNumber.text = company.phoneNumber
             email.text = company.email

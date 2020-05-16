@@ -92,6 +92,8 @@
 	<parameter name="INVOICE_DATE_OF_TRAFFIC" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="INVOICE_DATE_CREATED" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="INVOICE_NAME" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CLIENT_REGISTRATION_NUMBER" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="COMPANY_REGISTRATION_NUMBER" class="java.lang.String" isForPrompting="false"/>
 	<variable name="REPORT_VALUE_SUM" class="java.lang.Double"/>
 	<variable name="REPORT_TAX_VALUE_SUM" class="java.lang.Double"/>
 	<title>
@@ -118,7 +120,7 @@
 				<textFieldExpression><![CDATA["PIB: " + $P{COMPANY_PIB}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="58" width="280" height="14" uuid="b725175c-7d58-4949-b073-97320044c1da"/>
+				<reportElement x="0" y="72" width="280" height="14" uuid="b725175c-7d58-4949-b073-97320044c1da"/>
 				<textElement>
 					<font fontName="DejaVu Sans" size="11" isBold="true"/>
 				</textElement>
@@ -177,14 +179,14 @@
 				<textFieldExpression><![CDATA[$P{CLIENT_EMAIL}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="290" y="183" width="239" height="14" uuid="23e6bb17-a53f-451a-90f1-f8dd4c1ddcc1"/>
+				<reportElement x="290" y="189" width="239" height="14" uuid="23e6bb17-a53f-451a-90f1-f8dd4c1ddcc1"/>
 				<textElement>
 					<font fontName="DejaVu Sans"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{CLIENT_ACCOUNT_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="290" y="169" width="239" height="14" uuid="beed8fa6-bc6c-4f99-8c9a-2aae22033ae2"/>
+				<reportElement x="290" y="161" width="239" height="14" uuid="beed8fa6-bc6c-4f99-8c9a-2aae22033ae2"/>
 				<textElement>
 					<font fontName="DejaVu Sans"/>
 				</textElement>
@@ -259,6 +261,20 @@
 					<font fontName="DejaVu Sans" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{CLIENT_POSTAL} + " " + $P{CLIENT_CITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="175" width="239" height="14" uuid="a86107aa-41a8-4e1f-bde2-5a9f590073a9"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MB: " + $P{CLIENT_REGISTRATION_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="58" width="280" height="14" uuid="723bb443-3363-4172-9583-e2802ce0ab4d"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MB: " + $P{COMPANY_REGISTRATION_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>

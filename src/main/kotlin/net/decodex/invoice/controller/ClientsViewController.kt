@@ -63,6 +63,9 @@ class ClientsViewController : Initializable {
     private lateinit var pibColumn: TableColumn<String, Client>
 
     @FXML
+    private lateinit var registrationNumberColumn: TableColumn<String, Client>
+
+    @FXML
     private lateinit var accountNumberColumn: TableColumn<String, Client>
 
     @FXML
@@ -99,7 +102,7 @@ class ClientsViewController : Initializable {
     private fun search() {
         val result = clientsTableView.items.find {
             it.pib.toLowerCase().contains(searchText.text.toLowerCase()) || it.name.toLowerCase()
-                .contains(searchText.text.toLowerCase())
+                .contains(searchText.text.toLowerCase()) || it.registrationNumber.toLowerCase().contains(searchText.text.toLowerCase())
         }
         result?.let {
             clientsTableView.selectionModel.select(it)
@@ -144,6 +147,7 @@ class ClientsViewController : Initializable {
         postalCodeColumn.cellValueFactory = PropertyValueFactory("postalCode")
         cityColumn.cellValueFactory = PropertyValueFactory("city")
         pibColumn.cellValueFactory = PropertyValueFactory("pib")
+        registrationNumberColumn.cellValueFactory = PropertyValueFactory("registrationNumber")
         accountNumberColumn.cellValueFactory = PropertyValueFactory("accountNumber")
         phoneNumberColumn.cellValueFactory = PropertyValueFactory("phoneNumber")
         emailColumn.cellValueFactory = PropertyValueFactory("email")

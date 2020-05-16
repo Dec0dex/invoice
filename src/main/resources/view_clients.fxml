@@ -28,6 +28,7 @@
                         <TableColumn fx:id="postalCodeColumn" prefWidth="150.0" text="%postal_code_s" />
                         <TableColumn fx:id="cityColumn" prefWidth="150.0" text="%city_s" />
                         <TableColumn fx:id="pibColumn" prefWidth="100.0" text="%pib_s" />
+                        <TableColumn fx:id="registrationNumberColumn" prefWidth="100.0" text="%registration_number_s" />
                         <TableColumn fx:id="accountNumberColumn" prefWidth="150.0" text="%account_number_s" />
                         <TableColumn fx:id="phoneNumberColumn" prefWidth="150.0" text="%phone_number_s" />
                         <TableColumn fx:id="emailColumn" prefWidth="200.0" text="%email_s" />

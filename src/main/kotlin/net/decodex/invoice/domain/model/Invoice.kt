@@ -19,7 +19,7 @@ data class Invoice(
     var updatedAt: Date = Date()
 ) {
     fun getClientText(): String {
-        return "${client.name}; ${client.pib}; ${client.address} ${client.postalCode} ${client.city}"
+        return "${client.name}; ${client.pib}; ${client.address} ${client.postalCode} ${client.city}; ${client.registrationNumber}"
     }
 
     fun getDateCreatedText(): String {

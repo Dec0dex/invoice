@@ -10,6 +10,7 @@ data class Client(
     var city: String,
     var postalCode: String,
     var pib: String,
+    var registrationNumber: String,
     var accountNumber: String? = null,
     var phoneNumber: String? = null,
     var email: String? = null,

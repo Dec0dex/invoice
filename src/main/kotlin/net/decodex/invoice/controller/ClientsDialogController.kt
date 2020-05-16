@@ -24,6 +24,9 @@ class ClientsDialogController {
     private lateinit var pib: TextField
 
     @FXML
+    private lateinit var registrationNumber: TextField
+
+    @FXML
     private lateinit var accountNumber: TextField
 
     @FXML
@@ -41,6 +44,7 @@ class ClientsDialogController {
             city.text = client.city
             postalCode.text = client.postalCode
             pib.text = client.pib
+            registrationNumber.text = client.registrationNumber
             accountNumber.text = client.accountNumber
             phoneNumber.text = client.phoneNumber
             email.text = client.email
@@ -55,6 +59,7 @@ class ClientsDialogController {
             it.city = city.text
             it.postalCode = postalCode.text
             it.pib = pib.text
+            it.registrationNumber = registrationNumber.text
             it.accountNumber = accountNumber.text
             it.phoneNumber = phoneNumber.text
             it.email = email.text
@@ -72,6 +77,7 @@ class ClientsDialogController {
             city.text,
             postalCode.text,
             pib.text,
+            registrationNumber.text,
             accountNumber.text,
             phoneNumber.text,
             email.text
