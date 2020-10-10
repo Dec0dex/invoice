@@ -94,6 +94,7 @@
 	<parameter name="INVOICE_NAME" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="CLIENT_REGISTRATION_NUMBER" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="COMPANY_REGISTRATION_NUMBER" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="USER_FULL_NAME" class="java.lang.String" isForPrompting="false"/>
 	<variable name="REPORT_VALUE_SUM" class="java.lang.Double"/>
 	<variable name="REPORT_TAX_VALUE_SUM" class="java.lang.Double"/>
 	<title>
@@ -725,13 +726,13 @@
 				</textElement>
 				<text><![CDATA[Odgovorno lice]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="379" y="151" width="160" height="20" uuid="cd605169-b432-4501-8e7b-33898315f709"/>
+			<textField>
+				<reportElement x="379" y="151" width="160" height="20" uuid="87c7b4dd-4af0-4b25-ba08-dd0c29f8c772"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="DejaVu Sans"/>
 				</textElement>
-				<text><![CDATA[Emilija Žigon]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{USER_FULL_NAME}]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement x="279" y="151" width="78" height="20" uuid="d56816a0-5536-4613-9dcc-b072910c33b1"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">

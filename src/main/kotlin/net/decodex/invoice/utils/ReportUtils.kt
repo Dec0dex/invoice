@@ -74,6 +74,7 @@ object ReportUtils {
         map["INVOICE_DATE_CREATED"] = invoice.getDateCreatedText()
         map["INVOICE_NAME"] = invoice.name
         map["INVOICE_REMAINING_AMOUNT_WORDS"] = convertValueToWords(invoice.remainingAmount)
+        map["USER_FULL_NAME"] = Cache.user.fullName
     }
 
     private fun convertValueToWords(value: Double): String {

@@ -18,7 +18,7 @@ javafx {
     modules("javafx.controls", "javafx.fxml", "javafx.swing")
     sdk = System.getenv("JAVAFX_HOME")
     if (sdk == null || sdk.isBlank()) {
-        throw InvalidUserDataException("JAVAFX_HOME environment variable is not set. It must be set to root folder where JAVAFX SDK is located")
+//        throw InvalidUserDataException("JAVAFX_HOME environment variable is not set. It must be set to root folder where JAVAFX SDK is located")
     }
 }
 

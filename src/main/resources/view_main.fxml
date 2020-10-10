@@ -2,7 +2,8 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<BorderPane fx:id="contentView" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.MainViewController">
+
+<BorderPane fx:id="contentView" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.MainViewController">
     <center>
         <AnchorPane prefHeight="600.0" prefWidth="800.0">
 
@@ -13,22 +14,35 @@
             <menus>
                 <Menu mnemonicParsing="false" text="%file">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#openUsersView" text="%users"/>
+                        <MenuItem mnemonicParsing="false" onAction="#openUsersView" text="%users" />
                         <MenuItem mnemonicParsing="false" onAction="#openSettings" text="%settings" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#lockProgram" text="%lock" />
                         <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="%exit" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="%work">
+                <Menu mnemonicParsing="false" text="%invoicing">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#openInvoicesView" text="%invoices"/>
-                        <MenuItem mnemonicParsing="false" onAction="#openClientsView" text="%clients"/>
-                        <MenuItem mnemonicParsing="false" onAction="#openProductsView" text="%products"/>
-                        <SeparatorMenuItem mnemonicParsing="false"/>
-                        <MenuItem mnemonicParsing="false" onAction="#openDebtorsView" text="%debtors"/>
+                        <MenuItem mnemonicParsing="false" onAction="#openInvoicesView" text="%invoices" />
+                        <MenuItem mnemonicParsing="false" onAction="#openClientsView" text="%clients" />
+                        <MenuItem mnemonicParsing="false" onAction="#openProductsView" text="%products" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#openDebtorsView" text="%debtors" />
                     </items>
                 </Menu>
+            <Menu fx:id="instructionsMenu" mnemonicParsing="false" text="%instructions">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="%students" />
+                  <MenuItem mnemonicParsing="false" text="%applications" />
+                  <MenuItem mnemonicParsing="false" text="%certificates" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="%record_book" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="%courses" />
+                  <MenuItem mnemonicParsing="false" text="%commission_members" />
+                  <MenuItem mnemonicParsing="false" text="%authorized_personel" />
+              </items>
+            </Menu>
             </menus>
         </MenuBar>
     </top>
