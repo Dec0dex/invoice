@@ -38,7 +38,7 @@
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" text="%record_book" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                <MenuItem mnemonicParsing="false" text="%courses" />
+                <MenuItem mnemonicParsing="false" onAction="#openCourseView" text="%courses" />
                   <MenuItem mnemonicParsing="false" text="%commission_members" />
                   <MenuItem mnemonicParsing="false" text="%authorized_personel" />
               </items>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.decodex.invoice.controller.CoursesViewController">
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <Label text="%search" />
+                <TextField fx:id="searchText" prefWidth="300.0" />
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" />
+                <Separator orientation="VERTICAL" />
+                <Button fx:id="addButton" mnemonicParsing="false" onAction="#add" />
+                <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit" />
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete" />
+            </items>
+        </ToolBar>
+    </top>
+    <center>
+        <TableView fx:id="coursesTableView" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="50.0" text="Id" />
+                <TableColumn fx:id="nameColumn" prefWidth="300.0" text="%course_name_s" />
+                <TableColumn fx:id="descriptionColumn" prefWidth="400.0" text="%course_description_s" />
+                <TableColumn fx:id="certificateColumn" prefWidth="170.0" text="%course_certificate_s" />
+                <TableColumn fx:id="recordBookColumn" prefWidth="170.0" text="%course_record_book_s" />
+                <TableColumn fx:id="priceColumn" prefWidth="150.0" text="%price_s" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

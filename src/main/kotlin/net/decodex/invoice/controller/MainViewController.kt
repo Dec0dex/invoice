@@ -64,6 +64,11 @@ class MainViewController : Initializable {
     }
 
     @FXML
+    fun openCourseView() {
+        contentView.center = FXLoader.load("view_courses.fxml")
+    }
+
+    @FXML
     fun openDebtorsView() {
         TODO("Implement")
     }
